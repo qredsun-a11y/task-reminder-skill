@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1200" height="1800" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box {
+      fill: #f8f9fa;
+      stroke: #6c757d;
+      stroke-width: 2;
+      rx: 8;
+      ry: 8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 14px;
+    }
+    .box-header {
+      fill: #343a40;
+      color: white;
+      font-weight: bold;
+    }
+    .arrow {
+      stroke: #6c757d;
+      stroke-width: 2;
+      fill: none;
+      marker-end: url(#arrowhead);
+    }
+    .start {
+      fill: #28a745;
+      stroke: #218838;
+    }
+    .end {
+      fill: #dc3545;
+      stroke: #c82333;
+    }
+    .process {
+      fill: #007bff;
+      stroke: #0069d9;
+    }
+    .decision {
+      fill: #ffc107;
+      stroke: #e0a800;
+    }
+    .text {
+      fill: #212529;
+    }
+    .subtext {
+      fill: #6c757d;
+      font-size: 12px;
+    }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6c757d"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#212529">
+    Task Reminder Skill 工作流程
+  </text>
+
+  <!-- Phase 1: Task Collection -->
+  <rect x="450" y="50" width="300" height="40" class="box box-header"/>
+  <text x="600" y="75" text-anchor="middle" fill="white">1. 任务收集阶段</text>
+  
+  <rect x="400" y="120" width="150" height="60" class="box start" rx="4" ry="4"/>
+  <text x="475" y="145" text-anchor="middle" class="text">用户输入任务</text>
+  <text x="475" y="160" text-anchor="middle" class="subtext">列表消息</text>
+  
+  <rect x="600" y="120" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="675" y="145" text-anchor="middle" class="text">解析任务列表</text>
+  <text x="675" y="160" text-anchor="middle" class="subtext">正则匹配</text>
+  
+  <rect x="800" y="120" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="875" y="145" text-anchor="middle" class="text">存储任务</text>
+  <text x="875" y="160" text-anchor="middle" class="subtext">tasks.json</text>
+  
+  <rect x="600" y="210" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="675" y="235" text-anchor="middle" class="text">检查延期任务</text>
+  <text x="675" y="250" text-anchor="middle" class="subtext">自动续接</text>
+  
+  <rect x="600" y="300" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="675" y="325" text-anchor="middle" class="text">启动定时提醒</text>
+  <text x="675" y="340" text-anchor="middle" class="subtext">每小时触发</text>
+
+  <!-- Arrows for Phase 1 -->
+  <path d="M 550 150 L 590 150" class="arrow"/>
+  <path d="M 750 150 L 790 150" class="arrow"/>
+  <path d="M 675 180 L 675 210" class="arrow"/>
+  <path d="M 675 270 L 675 300" class="arrow"/>
+
+  <!-- Phase 2: Timed Reminder -->
+  <rect x="450" y="380" width="300" height="40" class="box box-header"/>
+  <text x="600" y="405" text-anchor="middle" fill="white">2. 定时提醒阶段</text>
+  
+  <rect x="600" y="450" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="675" y="475" text-anchor="middle" class="text">检查任务状态</text>
+  
+  <rect x="600" y="540" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="675" y="565" text-anchor="middle" class="text">过滤已完成任务</text>
+  
+  <rect x="600" y="630" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="675" y="655" text-anchor="middle" class="text">生成进度报告</text>
+  
+  <rect x="600" y="720" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="675" y="745" text-anchor="middle" class="text">发送提醒消息</text>
+
+  <!-- Arrows for Phase 2 -->
+  <path d="M 675 510 L 675 540" class="arrow"/>
+  <path d="M 675 600 L 675 630" class="arrow"/>
+  <path d="M 675 690 L 675 720" class="arrow"/>
+
+  <!-- Phase 3: User Response -->
+  <rect x="450" y="800" width="300" height="40" class="box box-header"/>
+  <text x="600" y="825" text-anchor="middle" fill="white">3. 用户响应处理</text>
+  
+  <!-- Completion Branch -->
+  <rect x="400" y="870" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="475" y="895" text-anchor="middle" class="text">用户发送</text>
+  <text x="475" y="910" text-anchor="middle" class="subtext">"xxx完成"</text>
+  
+  <rect x="600" y="870" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="675" y="895" text-anchor="middle" class="text">提取任务关键词</text>
+  
+  <rect x="800" y="870" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="875" y="895" text-anchor="middle" class="text">标记任务完成</text>
+  
+  <rect x="600" y="960" width="150" height="60" class="box decision" rx="4" ry="4"/>
+  <text x="675" y="985" text-anchor="middle" class="text">所有任务完成?</text>
+  
+  <rect x="400" y="1050" width="150" height="60" class="box end" rx="4" ry="4"/>
+  <text x="475" y="1075" text-anchor="middle" class="text">停止定时提醒</text>
+  <text x="475" y="1090" text-anchor="middle" class="subtext">发送完成通知</text>
+  
+  <rect x="800" y="1050" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="875" y="1075" text-anchor="middle" class="text">继续定时提醒</text>
+
+  <!-- Delay Branch -->
+  <rect x="400" y="1140" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="475" y="1165" text-anchor="middle" class="text">用户发送</text>
+  <text x="475" y="1180" text-anchor="middle" class="subtext">"xxx明天继续"</text>
+  
+  <rect x="600" y="1140" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="675" y="1165" text-anchor="middle" class="text">提取任务关键词</text>
+  
+  <rect x="800" y="1140" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="875" y="1165" text-anchor="middle" class="text">标记任务延期</text>
+  
+  <rect x="600" y="1230" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="675" y="1255" text-anchor="middle" class="text">询问用户</text>
+  <text x="675" y="1270" text-anchor="middle" class="subtext">"今天工作是否结束?"</text>
+  
+  <rect x="400" y="1320" width="150" height="60" class="box decision" rx="4" ry="4"/>
+  <text x="475" y="1345" text-anchor="middle" class="text">结束?</text>
+  
+  <rect x="300" y="1410" width="150" height="60" class="box end" rx="4" ry="4"/>
+  <text x="375" y="1435" text-anchor="middle" class="text">停止定时提醒</text>
+  <text x="375" y="1450" text-anchor="middle" class="subtext">发送结束消息</text>
+  
+  <rect x="700" y="1410" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="775" y="1435" text-anchor="middle" class="text">继续定时提醒</text>
+
+  <!-- Arrows for Phase 3 -->
+  <path d="M 550 910 L 590 910" class="arrow"/>
+  <path d="M 750 910 L 790 910" class="arrow"/>
+  <path d="M 675 960 L 675 960" class="arrow"/>
+  <path d="M 525 1020 L 490 1020 L 490 1050" class="arrow"/>
+  <path d="M 850 1020 L 890 1020 L 890 1050" class="arrow"/>
+  
+  <path d="M 550 1180 L 590 1180" class="arrow"/>
+  <path d="M 750 1180 L 790 1180" class="arrow"/>
+  <path d="M 675 1230 L 675 1230" class="arrow"/>
+  <path d="M 525 1290 L 490 1290 L 490 1320" class="arrow"/>
+  <path d="M 475 1380 L 475 1410" class="arrow"/>
+  <path d="M 675 1380 L 700 1380" class="arrow"/>
+
+  <!-- Phase 4: Next Day -->
+  <rect x="450" y="1500" width="300" height="40" class="box box-header"/>
+  <text x="600" y="1525" text-anchor="middle" fill="white">4. 第二天自动续接</text>
+  
+  <rect x="600" y="1570" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="675" y="1595" text-anchor="middle" class="text">检查前一天延期任务</text>
+  
+  <rect x="600" y="1660" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="675" y="1685" text-anchor="middle" class="text">自动添加到新列表</text>
+  
+  <rect x="600" y="1750" width="150" height="60" class="box process" rx="4" ry="4"/>
+  <text x="675" y="1775" text-anchor="middle" class="text">启动新的定时提醒</text>
+
+  <!-- Arrows for Phase 4 -->
+  <path d="M 675 1630 L 675 1660" class="arrow"/>
+  <path d="M 675 1720 L 675 1750" class="arrow"/>
+
+  <!-- Legend -->
+  <rect x="100" y="1780" width="20" height="20" fill="#28a745" stroke="#218838" rx="4" ry="4"/>
+  <text x="130" y="1800" class="subtext">开始</text>
+  
+  <rect x="250" y="1780" width="20" height="20" fill="#007bff" stroke="#0069d9" rx="4" ry="4"/>
+  <text x="280" y="1800" class="subtext">处理</text>
+  
+  <rect x="400" y="1780" width="20" height="20" fill="#ffc107" stroke="#e0a800" rx="4" ry="4"/>
+  <text x="430" y="1800" class="subtext">决策</text>
+  
+  <rect x="550" y="1780" width="20" height="20" fill="#dc3545" stroke="#c82333" rx="4" ry="4"/>
+  <text x="580" y="1800" class="subtext">结束</text>
+</svg>
